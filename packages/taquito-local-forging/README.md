@@ -49,6 +49,15 @@ const Tezos = new TezosToolkit('https://YOUR_PREFERRED_RPC_URL');
 Tezos.setProvider({ forger: localForger })
 ```
 
+## Usage - Native Mobile
+In order to use this package inside a native mobile app, the pacakge needs to be packaged up in a certain way. This is done by providing a webpack config and adding new node modules to fill some gaps. The mobile friendly JS can be produced by running the below command in this folder:
+
+```
+npm run build-webpack
+```
+
+Then look inside the newly created `dist` folder, for the file called `taquito_local_forging.js`. This file can be copied into an Xcode project and imported directly into an iOS `JSContext`
+
 ## Additional Info
 See the top-level [https://github.com/ecadlabs/taquito](https://github.com/ecadlabs/taquito) file for details on reporting issues, contributing and versioning.
 
